@@ -1,6 +1,6 @@
 /*
  * @brief classes around prussdrv
- * @author Mauro Meneghin (m3m0m2@gmail.com)
+ * @author Mauro Meneghin <m3m0m2@gmail.com>
  */
 
 #ifndef INCLUDE_PRU_HPP
@@ -10,6 +10,8 @@
 
 #include "prussdrv.h"
 #include <cstdint>
+
+namespace Core {
 
 class PrussDrv;
 
@@ -46,7 +48,7 @@ public:
     // prussdrv_pru_write_memory
 
 
-    // prevent copies of this
+    // prevent copies of Pru
     Pru(Pru const&)            = delete;
     void operator=(Pru const&) = delete;
 };
@@ -64,12 +66,7 @@ public:
     // call before the first get_instance if needed, otherwise default setup
     static void setup_intc(tpruss_intc_initdata prussintc_init_data);
 
-    static PrussDrv& get_instance()
-    {
-        static PrussDrv instance;
-        _init_done = true;
-        return instance;
-    }
+    static PrussDrv& get_instance();
     ~PrussDrv();
 
     // prevent copies of this
@@ -80,9 +77,11 @@ public:
 
     // needed to later wait on event from PRU
     // sysevt e.g. PRU0_ARM_INTERRUPT
-    void open_sysevt(unsigned sysevt);
     void pru_send_event(unsigned sysevt);
     void wait_event_and_clear(unsigned sysevt);
+    // host_uio is usually PRU_EVTOUT0 or PRU_EVTOUT1
+    // this needs to be called before get_pru
+    void open_host_uio(unsigned host_uio);
 
 private:
     static Pru* _prus[TOTAL_PRUS_NUM];
@@ -100,7 +99,10 @@ private:
  * 2 = PRU0_ARM_INTERRUPT available as PRU_EVTOUT0
  * 3 = PRU1_ARM_INTERRUPT available as PRU_EVTOUT1
  *
- * terminology the final mapped values are called host:
+ * terminology the final mapped values are called host_uio:
  * PRU_EVTOUT0, PRU_EVTOUT1, ...
  */
+
+} // namespace Core
+
 #endif

@@ -1,10 +1,11 @@
 /*
  * @brief ConfigPins class to setup PINs
- * @author Mauro Meneghin (m3m0m2@gmail.com)
+ * @author Mauro Meneghin <m3m0m2@gmail.com>
  */
 
 #include "config_pins.hpp"
 
+namespace Core {
 
 ConfigPins::ConfigPins(std::string file_template):
     _file_template(file_template)
@@ -63,3 +64,4 @@ void ConfigPins::set_pins(const char* array[][2])
     }
 }
 
+} // namespace Core

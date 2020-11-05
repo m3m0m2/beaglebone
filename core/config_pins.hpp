@@ -1,6 +1,6 @@
 /*
  * @brief ConfigPins class to setup PINs
- * @author Mauro Meneghin (m3m0m2@gmail.com)
+ * @author Mauro Meneghin <m3m0m2@gmail.com>
  *
  * Refer to config-pin for more details, under the hood
  * a pin can be set by writing to a special file e.g.
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <fstream>
 
-
+namespace Core {
 
 class ConfigPins
 {
@@ -43,5 +43,7 @@ const char* pin_settings[][2] =
 };  */
     void set_pins(const char* array[][2]);
 };
+
+} // namespace Core
 
 #endif
