@@ -1,0 +1,34 @@
+/*
+ * @brief header file for PRU assembly
+ * @author Mauro Meneghin <m3m0m2@gmail.com>
+ */
+
+#ifndef INCLUDE_DIGCAPTURE_HP
+#define INCLUDE_DIGCAPTURE_HP
+
+// Refer to this mapping in the file - \prussdrv\include\pruss_intc_mapping.h
+#define PRU0_PRU1_INTERRUPT     17
+#define PRU1_PRU0_INTERRUPT     18
+#define PRU0_ARM_INTERRUPT      19
+#define PRU1_ARM_INTERRUPT      20
+#define ARM_PRU0_INTERRUPT      21
+#define ARM_PRU1_INTERRUPT      22
+
+#define PRU_ICSS_CFG    C4
+#define CONST_PRUDRAM   C24
+#define CONST_L3RAM     C30
+#define CONST_DDR       C31
+
+#define SYSCFG 0x4
+
+// Address for the Constant table Programmable Pointer Register 0(CTPPR_0)
+#define CTBIR_0         0x22020
+// Address for the Constant table Programmable Pointer Register 0(CTPPR_0)
+#define CTBIR_1         0x22024
+
+// Address for the Constant table Programmable Pointer Register 0(CTPPR_0)
+#define CTPPR_0         0x22028
+// Address for the Constant table Programmable Pointer Register 1(CTPPR_1)
+#define CTPPR_1         0x2202C
+
+#endif
