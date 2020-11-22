@@ -1,0 +1,23 @@
+
+Sample interrupts exchanged
+18, 17, 19, 21
+
+
+Summary of default prussdrv intc mappings
+
+intc                 | val | r31 bit
+PRU1_PRU0_INTERRUPT  | 18  | 30
+PRU0_PRU1_INTERRUPT  | 17  | 31
+PRU0_ARM_INTERRUPT   | 19  |
+PRU1_ARM_INTERRUPT   | 20  |
+ARM_PRU0_INTERRUPT   | 21  | 30
+ARM_PRU1_INTERRUPT   | 22  | 31
+
+SECR0 = 1 << intc
+
+PRU0 sysevt mask
+100100 << 16
+
+PRU1 sysevt mask
+1000010 << 16
+

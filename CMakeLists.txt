@@ -18,7 +18,7 @@ set(PRU_PKG_DIR ${CMAKE_SOURCE_DIR}/am335x_pru_package/pru_sw/)
 set(PRUSSDRV_SOURCES ${PRU_PKG_DIR}app_loader/interface/prussdrv.c)
 
 # maybe consider using target_include_directories() for each target
-include_directories(${PRU_PKG_DIR}app_loader/include)
+include_directories(${PRU_PKG_DIR}app_loader/include core/)
 
 add_library(prussdrv STATIC ${PRUSSDRV_SOURCES})
 

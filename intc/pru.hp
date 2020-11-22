@@ -1,0 +1,31 @@
+/*
+ * @brief header file for PRU assembly
+ * @author Mauro Meneghin <m3m0m2@gmail.com>
+ */
+
+#ifndef INCLUDE_PRU_HP
+#define INCLUDE_PRU_HP
+
+// intc
+#define PRU0_PRU1_INTERRUPT     17
+#define PRU1_PRU0_INTERRUPT     18
+#define PRU0_ARM_INTERRUPT      19
+#define PRU1_ARM_INTERRUPT      20
+#define ARM_PRU0_INTERRUPT      21
+#define ARM_PRU1_INTERRUPT      22
+
+// constant table
+#define CONST_PRUSSINTC C0
+#define PRU_ICSS_CFG    C4
+#define CONST_PRUDRAM   C24
+#define CONST_L3RAM     C30
+#define CONST_DDR       C31
+
+// config registers
+#define CFG_SYSCFG 0x4
+
+// intc registers
+#define INTC_SECR0 0x280
+#define INTC_SECR1 0x284
+
+#endif
