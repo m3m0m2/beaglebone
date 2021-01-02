@@ -3,10 +3,10 @@
  * @author Mauro Meneghin <m3m0m2@gmail.com>
  */
 
-#ifndef INCLUDE_DIGCAPTURE_HP
-#define INCLUDE_DIGCAPTURE_HP
+#ifndef INCLUDE_PRU_HP
+#define INCLUDE_PRU_HP
 
-// Refer to this mapping in the file - \prussdrv\include\pruss_intc_mapping.h
+// intc
 #define PRU0_PRU1_INTERRUPT     17
 #define PRU1_PRU0_INTERRUPT     18
 #define PRU0_ARM_INTERRUPT      19
@@ -14,21 +14,37 @@
 #define ARM_PRU0_INTERRUPT      21
 #define ARM_PRU1_INTERRUPT      22
 
-#define PRU_ICSS_CFG    C4
+// constant table
+#define CONST_PRUSSINTC  C0
+#define CONST_PRUSSCFG   C4
+#define CONST_MCSPI0     C6
 #define CONST_PRUDRAM   C24
 #define CONST_L3RAM     C30
 #define CONST_DDR       C31
 
-#define SYSCFG 0x4
+// config registers
+#define CFG_SYSCFG      0x4
 
-// Address for the Constant table Programmable Pointer Register 0(CTPPR_0)
-#define CTBIR_0         0x22020
-// Address for the Constant table Programmable Pointer Register 0(CTPPR_0)
-#define CTBIR_1         0x22024
+// intc registers
+#define INTC_SECR0      0x280
+#define INTC_SECR1      0x284
 
-// Address for the Constant table Programmable Pointer Register 0(CTPPR_0)
-#define CTPPR_0         0x22028
-// Address for the Constant table Programmable Pointer Register 1(CTPPR_1)
-#define CTPPR_1         0x2202C
+// spi
+#define MCSPI_ADDR          0x48030000
+#define MCSPI_REVISION      (0x000 + MCSPI_ADDR)
+#define MCSPI_SYSCONFIG     (0x110 + MCSPI_ADDR)
+#define MCSPI_SYSSTATUS     (0x114 + MCSPI_ADDR)
+#define MCSPI_IRQSTATUS     (0x118 + MCSPI_ADDR)
+#define MCSPI_SYST          (0x124 + MCSPI_ADDR)
+#define MCSPI_MODULCTRL     (0x128 + MCSPI_ADDR)
+#define MCSPI_CH0CONF       (0x12C + MCSPI_ADDR)
+#define MCSPI_CH0STAT       (0x130 + MCSPI_ADDR)
+#define MCSPI_CH0CTRL       (0x134 + MCSPI_ADDR)
+#define MCSPI_TX0           (0x138 + MCSPI_ADDR)
+#define MCSPI_RX0           (0x13C + MCSPI_ADDR)
+#define MCSPI_XFERLEVEL     (0x17C + MCSPI_ADDR)
+
+
+
 
 #endif

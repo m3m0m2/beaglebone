@@ -4,6 +4,8 @@
 #include "iostream"
 
 
+using namespace Core;
+
 const char* pin_settings[][2] = 
 {
     { "P9_ONE", "up" },

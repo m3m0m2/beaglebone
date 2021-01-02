@@ -6,21 +6,12 @@
 #ifndef INCLUDE_UTILS_HPP
 #define INCLUDE_UTILS_HPP
 
-#include <iostream>
-#include <utility>
 
 namespace Core {
 
+void log(const char* fmt, ...);
 
-void log(){ std::cout<<std::endl; }
-
-template<typename First, typename ...Rest>
-void log(First && first, Rest && ...rest)
-{
-    std::cout << std::forward<First>(first);
-    log(std::forward<Rest>(rest)...);
-}
-
+void print_bits(unsigned x, unsigned start_bit, unsigned end_bit);
 
 } // namespace Core
 

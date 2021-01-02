@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-
+set(CMAKE_CXX_FLAGS -DDEBUG)
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
@@ -62,5 +62,12 @@ endfunction()
 
 project(BeagleBone VERSION 0.1)
 
-add_subdirectory(sum)
+add_subdirectory(core)
+
+#add_subdirectory(sum)
+#add_subdirectory(IEP_timer)
+#add_subdirectory(test_gpio)
+#add_subdirectory(digcapture)
+add_subdirectory(capture)
+add_subdirectory(intc)
 

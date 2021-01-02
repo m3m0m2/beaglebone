@@ -26,6 +26,7 @@ class Pru
 
     Pru(int pru_num);
     friend PrussDrv;
+    ~Pru();
 
     void map_pru_mem();
 
@@ -35,7 +36,6 @@ public:
     uint32_t* get_ext_mem() {return _ext_mem;}
     uint32_t get_ext_mem_size() {return _ext_mem_size;}
 
-    ~Pru();
 
     void map_ext_mem();
     void exec_program_file(const char* file);
@@ -79,7 +79,7 @@ public:
     // sysevt e.g. PRU0_ARM_INTERRUPT
     void pru_send_event(unsigned sysevt);
     void wait_event_and_clear(unsigned sysevt);
-    // host_uio is usually PRU_EVTOUT0 or PRU_EVTOUT1
+    // host_uio is usually PRU_EVTOUT_0 (0) or PRU_EVTOUT_1 (1)
     // this needs to be called before get_pru
     void open_host_uio(unsigned host_uio);
 

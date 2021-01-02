@@ -1,5 +1,5 @@
 
-set(CORE_CPP_SOURCES config_pins.cpp pru.cpp)
+set(CORE_CPP_SOURCES config_pins.cpp pru.cpp utils.cpp)
 set(CORE_HPP_INCLUDE config_pins.hpp pru.hpp utils.hpp)
 
 add_library(core STATIC ${CORE_CPP_SOURCES})

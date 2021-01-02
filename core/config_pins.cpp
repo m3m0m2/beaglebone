@@ -60,6 +60,10 @@ void ConfigPins::set_pins(const char* array[][2])
 
         if(value==nullptr) break;
 
+        // hacky way: pull down first
+        // as I cannot do it with pruin
+        //set_pin(key, "gpio_pd");
+        //set_pin(key, "in-");
         set_pin(key, value);
     }
 }
