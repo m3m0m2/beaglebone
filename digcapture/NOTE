@@ -1,0 +1,7 @@
+
+- copy file to /etc/modprobe.d/pru_ext_ddr_mem_1m.conf
+  to increase PRU external memory from 256KB to 1MB
+
+
+- connections
+
